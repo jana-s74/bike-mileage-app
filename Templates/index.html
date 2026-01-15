@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bike Mileage Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #111;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 8px;
+            width: 200px;
+        }
+        button {
+            background: orange;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🏍️ Bike Mileage Predictor</h1>
+
+    <form method="POST">
+        <input type="number" name="cc" placeholder="Engine CC" required><br>
+        <input type="number" name="weight" placeholder="Bike Weight (kg)" required><br>
+
+        <select name="fuel">
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+        </select><br>
+
+        <button type="submit">Predict Mileage</button>
+    </form>
+
+    {% if prediction %}
+        <h2>🔥 Estimated Mileage: {{ prediction }} km/l</h2>
+    {% endif %}
+
+</body>
+</html>
